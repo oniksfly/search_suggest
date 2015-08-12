@@ -1,0 +1,45 @@
+.search-suggests {
+  form#search_suggest_request {
+    margin-top: 20px;
+    text-align: center;
+
+    .status {
+      .progress {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .place-for-table {
+    table {
+      tbody {
+        tr {
+          td {
+            .keywords {
+              cursor: pointer;
+            }
+            .lint-to-se {
+              padding-left: 5px;
+              a {
+                font-size: 0.77em;
+              }
+              a.yandex{
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav {
+    float: right;
+    a.to-top {
+      font-size: 2em;
+      line-height: 1em;
+      text-decoration: none;
+      margin: 5px 20px 10px 0;
+    }
+  }
+}

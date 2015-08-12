@@ -1,0 +1,6 @@
+javascript:
+  var dispatcher = new WebSocketRails("#{SearchSuggest::SuggestsHelper::WebsocketPath}");
+
+.search-suggests
+  = render 'search_suggest/suggests/form'
+  .place-for-table

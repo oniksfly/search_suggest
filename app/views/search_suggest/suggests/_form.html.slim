@@ -1,0 +1,24 @@
+= form_tag root_path, id: :search_suggest_request, remote: true, data: {type: 'json'}, class: 'form-inline ' do
+  a name="top"
+  .form-group.form-group-lg
+    = label_tag :request, 'Текст запроса', class: 'sr-only'
+    = text_field_tag :request, '', placeholder: 'Запрос', class: 'form-control'
+  .form-group.form-group-lg
+    = label_tag :max_results, 'Максимальное количество предложений', class: 'sr-only'
+    = select_tag :max_results, options_for_select(SearchSuggest::RESULTS_COUNT), class: 'form-control'
+  .form-group.form-group-lg
+    = submit_tag 'Искать', {data: {disable_with: 'Ищу...'}, class: 'btn btn-primary btn-lg', disabled: true}
+  .status.panel.hidden
+    .panel-body
+      ' Подобрано подсказок по ключевой фразе:
+      span.count
+        | 0
+      ' , совершено запросов к поисковой системе:
+      span.iterations
+        | 0
+      | .
+
+      .progress
+        .progress-bar.progress-bar-striped.active aria-valuenow='0' aria-valuemax='0'
+          span 0%
+  .place-for-messages
